@@ -1,0 +1,18 @@
+<section class="container-login">
+  <section class="abs-nav">
+    <app-menu1></app-menu1>
+  </section>
+  <section class="login-form">
+    <section class="top-form">
+      <img src="../../../assets/images/icons-1.png" alt="icons">
+    </section>
+    <form [formGroup]="loginform" class="main-form">
+      <input class="username" type="text" formControlName="username" id="username" [class.is-invalid]="loginform.controls['username'].dirty && loginform.hasError('required','username')" placeholder="User Name" autocomplete="off">
+      <small *ngIf="loginform.controls['username'].dirty && loginform.hasError('required','username')" class="text-error">UserName is Requierd!</small>
+      <input class="password" type="password" formControlName="password" id="password" [class.is-invalid]="loginform.controls['password'].dirty && loginform.hasError('required','password')" placeholder="Password" autocomplete="off">
+      <small *ngIf="loginform.controls['password'].dirty && loginform.hasError('required','password')" class="text-error">Password is Requierd!</small>
+      <input (click)="onLogin()" type="submit" class="submit" value="Log in">
+    </form>
+  </section>
+  <app-footer1></app-footer1>
+</section>

@@ -1,0 +1,23 @@
+<section class="container-register">
+  <section class="abs-nav">
+    <app-menu1></app-menu1>
+  </section>
+  <section class="register-form">
+    <section class="top-form">
+      <img src="../../../assets/images/icons-1.png" alt="icons">
+    </section>
+    <form [formGroup]="registerform" class="main-form">
+      <input class="firstname" type="text" formControlName="firstname" id="firstname" [class.is-invalid]="registerform.controls['firstname'].dirty && registerform.hasError('required','firstname')" placeholder="First Name" autocomplete="off">
+      <input class="lastname" type="text" formControlName="lastname" id="lastname" [class.is-invalid]="registerform.controls['lastname'].dirty && registerform.hasError('required','lastname')" placeholder="Last Name" autocomplete="off">
+      <input class="username" type="text" formControlName="username" id="username" [class.is-invalid]="registerform.controls['username'].dirty && registerform.hasError('required','username')" placeholder="User Name" autocomplete="off">
+      <small *ngIf="registerform.controls['username'].dirty && registerform.hasError('required','username')" class="text-error">UserName is Requierd!</small>
+      <input class="email" type="email" formControlName="email" id="email" [class.is-invalid]="registerform.controls['email'].dirty && registerform.hasError('required','email')" placeholder="Email" autocomplete="off">
+      <small *ngIf="registerform.controls['email'].dirty && registerform.hasError('required','email')" class="text-error">Email is Requierd!</small>
+      <input class="password" type="password" formControlName="password" id="password" [class.is-invalid]="registerform.controls['password'].dirty && registerform.hasError('required','password')" placeholder="Password" autocomplete="off">
+      <small *ngIf="registerform.controls['password'].dirty && registerform.hasError('required','password')" class="text-error">Password is Requierd!</small>
+      <input (click)="onRegister()" type="submit" class="submit" value="Register">
+      <p class="helper-text">Already have account ? <a href="/login">Login</a></p>
+    </form>
+  </section>
+  <app-footer1></app-footer1>
+</section>

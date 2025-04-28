@@ -1,0 +1,156 @@
+.container-register {
+  display: flex;
+  height: 100svh;
+  background-color: #a0d0ff;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.register-form {
+  width: 60%;
+  height: 560px;
+  margin: auto;
+  border-radius: 5rem;
+  box-shadow: 0px 26px 77px 19px rgba(0,0,0,0.1);
+}
+.register-form .top-form {
+  display: flex;
+  width: 100%;
+  height: 150px;
+  background-color: #d7e8ff;
+  border-top-right-radius: 5rem;
+  border-top-left-radius: 5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.register-form .top-form img {
+  width: 500px;
+}
+.register-form .main-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+  padding: 1rem;
+  width: 100%;
+  height: 410px;
+  background-color: #ffffff;
+  border-bottom-right-radius: 5rem;
+  border-bottom-left-radius: 5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.register-form .main-form .helper-text {
+  margin: 1rem 0;
+  font: 18px Bahnschrift, Serif;
+}
+.register-form .main-form .helper-text a {
+  color: #1a14e7;
+}
+.register-form .main-form input[type=text],
+.register-form .main-form input[type=email],
+.register-form .main-form input[type=password] {
+  width: 350px;
+  height: 56px;
+  font-size: 30px;
+  background-color: #ffffff;
+  font-family: Acumin_vc;
+  margin: 0 0 40px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  text-align: center;
+  -moz-transform: matrix( 0.8961128807539,0,0,0.8961128807539,0,0);
+  -webkit-transform: matrix( 0.8961128807539,0,0,0.8961128807539,0,0);
+  -ms-transform: matrix( 0.8961128807539,0,0,0.8961128807539,0,0);
+  cursor: text;
+}
+.register-form .main-form input[type=text],
+.register-form .main-form input[type=email] {
+  border-color: #2E4053;
+}
+.register-form .main-form input[type=text].is-invalid,
+.register-form .main-form input[type=email].is-invalid {
+  border-color: red;
+  margin-bottom: 0;
+}
+.register-form .main-form input[type=password] {
+  border-color: #2E4053;
+}
+.register-form .main-form input[type=password].is-invalid {
+  border-color: red;
+  margin-bottom: 0;
+}
+.register-form .main-form input::placeholder {
+  font-size: 22px;
+  font-family: Acumin_vc;
+  color: rgba(101, 130, 143, 0.502);
+  text-align: center;
+  font-weight: bold;
+  line-height: 0.706;
+}
+.register-form .main-form input:focus {
+  outline: none;
+}
+.register-form .main-form input[type=submit] {
+  height: 44px;
+  font-size: 22px;
+  font-family: Acumin_vc;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  line-height: 0.706;
+  background-color: #65828f;
+  padding: 13px 65px 10px;
+  border-radius: 2rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width:1300px){
+  .register-form {
+    width: 70%;
+  }
+}
+@media screen and (max-width:1100px){
+  .container-register {
+    height: max-content;
+  }
+  .register-form {
+    width: 80%;
+    height: 800px;
+  }
+  .register-form .main-form {
+    height: 650px;
+  }
+}
+@media screen and (max-width:768px) {
+  .container-register {
+    height: max-content;
+    margin: 0 1em;
+  }
+  .register-form {
+    width: 80%;
+    margin: auto;
+    border-radius: 15px;
+  }
+  .register-form .top-form img {
+    width: 249px;
+  }
+  .register-form .top-form {
+    height: 150px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+  }
+  .register-form .main-form {
+    height: 650px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+  .register-form .main-form input[type=text],
+  .register-form .main-form input[type=email],
+  .register-form .main-form input[type=password] {
+    width: 224px;
+  }
+}

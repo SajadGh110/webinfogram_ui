@@ -1,0 +1,61 @@
+<section class="dashboard-wrapper">
+  <app-dashboard-sidebar></app-dashboard-sidebar>
+  <section class="dashboard-main">
+    <section class="row">
+      <section class="datepicker-input">
+        <section class="detail">
+          <h2>انتخاب بازه زمانی آمار</h2>
+        </section>
+        <form [formGroup]="dateform">
+          <label for="StartDate">Start Date : </label>
+          <input type="date" id="StartDate" formControlName="StartDate" value="{{StartDate}}">
+          <label for="EndDate">End Date : </label>
+          <input type="date" id="EndDate" formControlName="EndDate" value="{{EndDate}}">
+          <input type="submit" value="Search" (click)="OnUpdateDate()">
+        </form>
+      </section>
+    </section>
+    <section class="row">
+      <section class="detail" *ngIf="!flag_page">
+        <h2>آمار کل بازدید ها - بر حسب صفحات</h2>
+      </section>
+      <section class="loading-spinner" *ngIf="!flag_page">
+        <mat-spinner></mat-spinner>
+      </section>
+      <section class="bar-chart-c1" *ngIf="flag_page">
+        <section echarts [options]="series_page" style="min-height: 800px"></section>
+      </section>
+    </section>
+    <section class="row">
+      <section class="detail" *ngIf="!flag_page">
+        <h2>آمار کل بازدید ها - بر حسب صفحات</h2>
+      </section>
+      <section class="loading-spinner" *ngIf="!flag_page">
+        <mat-spinner></mat-spinner>
+      </section>
+      <section class="pie-grid-c2" *ngIf="flag_page">
+        <section echarts [options]="series_page_pie" style="min-height: 600px"></section>
+      </section>
+    </section>
+    <section class="row">
+      <section class="detail">
+        <h2>جدول آمار بازدید صفحات</h2>
+      </section>
+      <section class="loading-spinner" *ngIf="!flag_page">
+        <mat-spinner></mat-spinner>
+      </section>
+      <section class="table-c1" *ngIf="flag_page">
+        <section class="table">
+          <section class="table-header">
+            <section class="cell-header cell-key2"><p>صفحه</p></section>
+            <section class="cell-header"><p>میزان بازدید</p></section>
+          </section>
+          <section *ngFor="let item of data_page" class="table-row">
+            <section class="cell cell-key2"><p>{{decodeURIComponent(item.keys[0]).replace("https://","")}}</p></section>
+            <section class="cell spec"><p>{{item.impressions}}</p></section>
+          </section>
+        </section>
+      </section>
+    </section>
+  </section>
+</section>

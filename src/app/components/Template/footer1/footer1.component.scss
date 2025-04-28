@@ -1,0 +1,19 @@
+img {
+  width: 80px;
+}
+p {
+  font-size: 18px;
+  font-family: Cinema;
+  color: #0417ab;
+  line-height: 0.954;
+  text-align: center;
+  margin-top: 1em;
+}
+@media screen and (max-width:768px) {
+  p {
+    font-size: 12px;
+  }
+  img {
+    width: 60px;
+  }
+}

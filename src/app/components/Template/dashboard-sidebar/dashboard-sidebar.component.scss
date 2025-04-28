@@ -1,0 +1,87 @@
+nav .top-sidebar {
+  display: flex;
+  min-height: 105px;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+}
+nav ul {
+  direction: ltr;
+}
+nav ul li {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 0 0 5px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.3);
+  transition: 0.4s margin-right cubic-bezier(0.16, 1, 0.3, 1) 0s;
+  outline: none;
+}
+nav ul li:hover,
+nav ul li:focus {
+  margin-right: -0.5rem;
+}
+li.menu_item_selected {
+  margin-right: -0.5rem!important;
+}
+aside nav ul li a {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+aside.v1 nav ul li a {
+  padding: 10px 10px;
+}
+aside.v2 nav ul li a {
+  padding: 5px 10px;
+}
+aside nav ul li a p {
+  width: 100%;
+  text-align: center;
+  font-family: Acumin_vc;
+  padding: 5px 0 0 0;
+  -moz-transform: matrix(1, 0, 0, 1.2, 0, 0);
+  -webkit-transform: matrix(1, 0, 0, 1.2, 0, 0);
+  -ms-transform: matrix(1, 0, 0, 1.2, 0, 0);
+  color: white;
+}
+aside.v1 nav ul li a p {
+  font-size: 18px;
+}
+aside.v2 nav ul li a p {
+  font-size: 16px;
+}
+#Dashboard{
+  background-color: #1c1b3a;
+}
+#profile{
+  background-color: #1b9ac4;
+}
+#Degrees{
+  background-color: #c36577;
+}
+#Date{
+  background-color: #42b3a1;
+}
+#KeyWord{
+  background-color: #965d63;
+}
+#Device{
+  background-color: #004e75;
+}
+#Page{
+  background-color: #66828e;
+}
+#Location{
+  background-color: #6d6e71;
+}
+#Logout{
+  background-color: #EC7063;
+}
+aside.v1 nav .datepicker-input {
+  display: none;
+}
+aside.v2 nav .datepicker-input {
+  display: flex;
+}

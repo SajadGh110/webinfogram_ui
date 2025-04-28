@@ -1,0 +1,11 @@
+<section class="menu1-container">
+  <a href="/"><img src="/assets/images/logo.png" alt="menu-icon"></a>
+  <ul>
+    <li class="m-login" *ngIf="Status"><a href="/dashboard"><span></span> Dashboard</a></li>
+    <li class="m-login" *ngIf="!Status"><a href="/login"><span></span> Login</a></li>
+    <li class="m-register" *ngIf="!Status"><a href="/register"><span></span> Register</a></li>
+    <li class="m-support"><a href="/support"><span></span> Support</a></li>
+    <li class="m-about"><a href="/about"><span></span> About</a></li>
+  </ul>
+</section>
+

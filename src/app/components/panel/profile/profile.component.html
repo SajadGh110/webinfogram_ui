@@ -1,0 +1,103 @@
+<section class="dashboard-wrapper">
+  <app-dashboard-sidebar></app-dashboard-sidebar>
+  <section class="dashboard-main">
+    <section class="row">
+      <section class="profile">
+        <form [formGroup]="profileform" class="main-form">
+          <section class="information">
+            <section class="header">
+              <h3>اطلاعات حساب کاربری</h3>
+            </section>
+            <section class="loading-spinner" *ngIf="!flag_profile">
+              <mat-spinner></mat-spinner>
+            </section>
+            <section class="form" *ngIf="flag_profile">
+              <section class="item">
+                <label for="firstName">نام : </label>
+                <input class="firstName" type="text" formControlName="firstName" id="firstName" placeholder="نام" value="{{formData.firstName}}">
+              </section>
+              <section class="item">
+                <label for="lastName">نام خانوادگی : </label>
+                <input class="lastName" type="text" formControlName="lastName" id="lastName" placeholder="نام خانوادگی" value="{{formData.lastName}}">
+              </section>
+              <section class="item">
+                <label for="email">ایمیل : </label>
+                <input class="email" type="text" formControlName="email" id="email" placeholder="ایمیل" value="{{formData.email}}">
+              </section>
+              <section class="item">
+                <label for="phoneNumber">تلفن : </label>
+                <input class="phoneNumber" type="text" formControlName="phoneNumber" id="phoneNumber" placeholder="تلفن" value="{{formData.phoneNumber}}">
+              </section>
+              <section class="item">
+                <label for="city">شهر : </label>
+                <input class="city" type="text" formControlName="city" id="city" placeholder="شهر" value="{{formData.city}}">
+              </section>
+              <section class="item">
+                <label for="address">آدرس : </label>
+                <input class="address" type="text" formControlName="address" id="address" placeholder="آدرس" value="{{formData.address}}">
+              </section>
+              <section class="item">
+                <label for="postalCode">کدپستی : </label>
+                <input class="postalCode" type="text" formControlName="postalCode" id="postalCode" placeholder="کدپستی" value="{{formData.postalCode}}">
+              </section>
+            </section>
+          </section>
+          <section class="google">
+            <section class="header">
+              <h3>اطلاعات سرویس گوگل</h3>
+            </section>
+            <section class="loading-spinner" *ngIf="!flag_profile">
+              <mat-spinner></mat-spinner>
+            </section>
+            <section class="form" *ngIf="flag_profile">
+              <section class="item">
+                <label for="siteUrl">Site Url : </label>
+                <input class="siteUrl" type="text" formControlName="siteUrl" id="siteUrl" placeholder="Site Url" value="{{formData.siteUrl}}">
+              </section>
+              <section class="item">
+                <label for="applicationName">Application Name : </label>
+                <input class="applicationName" type="text" formControlName="applicationName" id="applicationName" placeholder="Application Name" value="{{formData.applicationName}}">
+              </section>
+              <section class="item">
+                <label for="clientId">Client ID : </label>
+                <input class="clientId" type="text" formControlName="clientId" id="clientId" placeholder="Client ID" value="{{formData.clientId}}">
+              </section>
+              <section class="item">
+                <label for="clientSecret">Client Secret : </label>
+                <input class="clientSecret" type="text" formControlName="clientSecret" id="clientSecret" placeholder="Client Secret" value="{{formData.clientSecret}}">
+              </section>
+              <section class="item">
+                <label for="googleRefreshToken">Refresh Token : </label>
+                <input class="googleRefreshToken" type="text" formControlName="googleRefreshToken" id="googleRefreshToken" placeholder="Refresh Token" value="{{formData.googleRefreshToken}}">
+              </section>
+              <p>قبل از احرازهویت گوگل باید Client ID و Client Secret را ثبت کنید!</p>
+              <section class="item">
+                <input (click)="onGoogleLogin()" type="submit" class="submit-btn" value="احرازهویت گوگل">
+              </section>
+            </section>
+          </section>
+          <section class="submit w_header">
+            <section class="form" *ngIf="flag_profile">
+              <section class="item">
+                <label>سطح دسترسی : </label>
+                <p>{{formData.role}}</p>
+              </section>
+              <section class="item">
+                <label>نام کاربری : </label>
+                <p>{{formData.userName}}</p>
+              </section>
+              <section class="item">
+                <label for="password">گذرواژه : </label>
+                <input class="password" type="password" formControlName="password" id="password" [class.is-invalid]="profileform.controls['password'].dirty && profileform.hasError('required','password')" placeholder="Password">
+                <small *ngIf="profileform.controls['password'].dirty && profileform.hasError('required','password')" class="text-error">Password is Requierd!</small>
+              </section>
+              <section class="item">
+                <input (click)="onUpdate()" type="submit" class="submit-btn" value="ویرایش اطلاعات">
+              </section>
+            </section>
+          </section>
+        </form>
+      </section>
+    </section>
+  </section>
+</section>

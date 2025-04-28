@@ -1,0 +1,31 @@
+<section class="container">
+    <app-header></app-header>
+    <section class="main">
+        <section class="pull-right">
+            <section class="wallpaper"></section>
+        </section>
+        <section class="pull-left">
+            <section class="title">
+                <h1>WebInfoGram</h1>
+            </section>
+            <section class="social-media">
+                <ul>
+                    <li class="social-phone"><a href="tel:09140454200" target="_social"><img src="assets/icons/phone.png" alt="phone"></a></li>
+                    <li class="social-telegram"><a href="https://t.me/ASCII_83_71_72" target="_social"><img src="assets/icons/telegram.png" alt="telegram"></a></li>
+                    <li class="social-instagram"><a href="https://www.instagram.com/evan_ir_official/" target="_social"><img src="assets/icons/instagram.png" alt="instagram"></a></li>
+                </ul>
+            </section>
+            <section class="spacer-1"></section>
+          <section class="menu1">
+            <ul>
+              <li class="m-login" *ngIf="Status"><a href="/dashboard"><span></span> Dashboard</a></li>
+              <li class="m-login" *ngIf="!Status"><a href="/login"><span></span> Login</a></li>
+              <li class="m-register" *ngIf="!Status"><a href="/register"><span></span> Register</a></li>
+              <li class="m-support"><a href="/support"><span></span> Support</a></li>
+              <li class="m-about"><a href="/about"><span></span> About</a></li>
+            </ul>
+          </section>
+        </section>
+    </section>
+    <app-footer1 [img]="true"></app-footer1>
+</section>

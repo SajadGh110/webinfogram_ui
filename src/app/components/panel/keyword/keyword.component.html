@@ -1,0 +1,56 @@
+<section class="dashboard-wrapper">
+  <app-dashboard-sidebar></app-dashboard-sidebar>
+  <section class="dashboard-main">
+    <section class="row">
+      <section class="datepicker-input">
+        <section class="detail">
+          <h2>انتخاب بازه زمانی آمار</h2>
+        </section>
+        <form [formGroup]="dateform">
+          <label for="StartDate">Start Date : </label>
+          <input type="date" id="StartDate" formControlName="StartDate" value="{{StartDate}}">
+          <label for="EndDate">End Date : </label>
+          <input type="date" id="EndDate" formControlName="EndDate" value="{{EndDate}}">
+          <input type="submit" value="Search" (click)="OnUpdateDate()">
+        </form>
+      </section>
+    </section>
+    <section class="row">
+      <section class="detail" *ngIf="!flag_query">
+        <h2>آمار کل بازدید ها - بر حسب کلمه کلیدی</h2>
+      </section>
+      <section class="loading-spinner" *ngIf="!flag_query">
+        <mat-spinner></mat-spinner>
+      </section>
+      <section class="bar-chart-c1" *ngIf="flag_query">
+        <section echarts [options]="series_query" style="min-height: 800px"></section>
+      </section>
+    </section>
+    <section class="row">
+      <section class="detail">
+        <h2>رتبه بندی کلمات کلیدی</h2>
+      </section>
+      <section class="loading-spinner" *ngIf="!flag_query">
+        <mat-spinner></mat-spinner>
+      </section>
+      <section class="table-c1" *ngIf="flag_query">
+        <section class="table">
+          <section class="table-header">
+            <section class="cell-header cell-key"><p>کلمه کلیدی</p></section>
+            <section class="cell-header"><p>میزان بازدید</p></section>
+            <section class="cell-header"><p>میزان کلیک</p></section>
+            <section class="cell-header"><p>نرخ کلیک</p></section>
+            <section class="cell-header"><p>رتبه</p></section>
+          </section>
+          <section *ngFor="let item of data_query" class="table-row">
+            <section class="cell cell-key"><p>{{item.keys[0]}}</p></section>
+            <section class="cell"><p>{{item.impressions}}</p></section>
+            <section class="cell"><p>{{item.clicks}}</p></section>
+            <section class="cell"><p>{{item.ctr.toFixed(2)}}</p></section>
+            <section class="cell spec"><p>{{item.position.toFixed(2)}}</p></section>
+          </section>
+        </section>
+      </section>
+    </section>
+  </section>
+</section>

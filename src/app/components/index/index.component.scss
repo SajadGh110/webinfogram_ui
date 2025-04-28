@@ -1,0 +1,147 @@
+.spacer-1 {
+  background-color: #0e2749;
+  width: 289px;
+  height: 13px;
+  position: relative;
+  z-index: 11;
+  margin-top: 5px;
+}
+.wallpaper {
+  background-image: url("/assets/images/homewall1.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 200px;
+  height: 255px;
+  border-radius: 1rem;
+}
+.main {
+  flex-direction: row;
+}
+.main .pull-right {
+  display: flex;
+  margin-left: 3em;
+}
+.main .pull-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 3em;
+}
+.title {
+  margin-bottom: 1em;
+}
+.title h1 {
+  font-size: 46px;
+  font-family: Acumin_vc;
+  color: #080a0a;
+  font-weight: 600;
+}
+.social-media ul {
+  direction: ltr;
+  display: flex;
+  flex-direction: row;
+}
+.social-media ul li {
+  list-style: none;
+  display: inline-block;
+  width: 32px;
+  margin: 0 4px;
+}
+.social-media ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.social-media ul li a img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.menu1 {
+  font-size: 25px;
+  font-family: Calibri;
+  text-align: left;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 5px;
+}
+.menu1 ul li {
+  display: grid;
+}
+.menu1 ul li a {
+  display: flex;
+  flex-direction: row-reverse;
+  text-decoration: none;
+  justify-content: flex-start;
+}
+.menu1 ul li a span {
+  display: flex;
+  align-items: center;
+  font-family: Wingdings;
+  font-size: 18px;
+  margin-right: 0.5rem;
+}
+.menu1 ul li.m-login a {
+  color: #0e2749;
+}
+.menu1 ul li.m-register a {
+  color: #0e2749;
+}
+.menu1 ul li.m-support a {
+  color: #0e2749;
+}
+.menu1 ul li.m-about a {
+  color: #0e2749;
+}
+
+@media screen and (max-width:768px) {
+  .container{
+    margin: 0 2em;
+  }
+  .main .pull-right{
+    margin-left: 1em;
+  }
+  .main .pull-left{
+    margin-right: 1em;
+  }
+  .title h1{
+    font-size: 30px;
+  }
+  .spacer-1{
+    width: 170px;
+  }
+  .spacer-2{
+    width: 170px;
+  }
+  .wallpaper{
+    width: 122px;
+    height: 195px;
+  }
+  .title{
+    margin-bottom: 0.75em;
+  }
+  .social-media ul li {
+    width: 24px;
+  }
+  .menu1 ul li a{
+    font-size: 22px;
+  }
+  .menu1 ul li a span{
+    font-size: 15px;
+  }
+}
+@media screen and (min-width:769px){
+  /*.login-form .main-form{
+    background-color: yellow;
+  }*/
+}
+@media screen and (min-width:993px){
+  /*.login-form .main-form{
+    background-color: magenta;
+  }*/
+}
+@media screen and (min-width:1201px){
+  /*.login-form .main-form{
+    background-color: cyan;
+  }*/
+}

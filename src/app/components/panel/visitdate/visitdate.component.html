@@ -1,0 +1,41 @@
+<section class="dashboard-wrapper">
+  <app-dashboard-sidebar></app-dashboard-sidebar>
+  <section class="dashboard-main">
+    <section class="row">
+      <section class="datepicker-input">
+        <section class="detail">
+          <h2>انتخاب بازه زمانی آمار</h2>
+        </section>
+        <form [formGroup]="dateform">
+          <label for="StartDate">Start Date : </label>
+          <input type="date" id="StartDate" formControlName="StartDate" value="{{StartDate}}">
+          <label for="EndDate">End Date : </label>
+          <input type="date" id="EndDate" formControlName="EndDate" value="{{EndDate}}">
+          <input type="submit" value="Search" (click)="OnUpdateDate()">
+        </form>
+      </section>
+    </section>
+    <section class="row">
+      <section class="detail" *ngIf="!flag_date">
+        <h2>آمار کل بازدید ها - بر حسب روز</h2>
+      </section>
+      <section class="loading-spinner" *ngIf="!flag_date">
+        <mat-spinner></mat-spinner>
+      </section>
+      <section class="line-chart-c1" *ngIf="flag_date">
+        <section echarts [options]="series_date"></section>
+      </section>
+    </section>
+    <section class="row">
+      <section class="detail" *ngIf="!flag_date">
+        <h2>آمار کل بازدید ها - بر حسب روز</h2>
+      </section>
+      <section class="loading-spinner" *ngIf="!flag_date">
+        <mat-spinner></mat-spinner>
+      </section>
+      <section class="bar-chart-c1" *ngIf="flag_date">
+        <section echarts [options]="series_bar"></section>
+      </section>
+    </section>
+  </section>
+</section>

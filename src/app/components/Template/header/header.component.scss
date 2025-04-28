@@ -1,0 +1,28 @@
+a.logo {
+  display: inline-flex;
+  margin: 0 auto;
+}
+a.logo img {
+  width: 130px;
+}
+
+@media screen and (max-width:768px) {
+  a.logo img {
+    width: 100px;
+  }
+}
+@media screen and (min-width:769px){
+  /*.login-form .main-form{
+    background-color: yellow;
+  }*/
+}
+@media screen and (min-width:993px){
+  /*.login-form .main-form{
+    background-color: magenta;
+  }*/
+}
+@media screen and (min-width:1201px){
+  /*.login-form .main-form{
+    background-color: cyan;
+  }*/
+}

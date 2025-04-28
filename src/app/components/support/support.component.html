@@ -1,0 +1,41 @@
+<section class="container">
+  <section class="abs-nav">
+    <app-menu1></app-menu1>
+  </section>
+  <section class="supp_main">
+    <section class="contact_form">
+      <form [formGroup]="contactform" >
+        <section class="frm_row">
+          <input type="text" id="subject" name="subject" formControlName="subject" [class.is-invalid]="contactform.controls['subject'].dirty && contactform.hasError('required','subject')" placeholder="عنوان">
+          <input type="text" id="tel" name="tel" formControlName="tel" [class.is-invalid]="contactform.controls['tel'].dirty && contactform.hasError('required','tel')" placeholder="شماره تماس">
+        </section>
+        <section class="frm_row">
+          <input type="text" id="name" name="name" formControlName="name" [class.is-invalid]="contactform.controls['name'].dirty && contactform.hasError('required','name')" placeholder="نام و نام خانوادگی">
+          <input type="email" id="email" name="email" formControlName="email" [class.is-invalid]="contactform.controls['email'].dirty && contactform.hasError('required','email')" placeholder="ایمیل">
+        </section>
+        <section class="frm_row">
+          <textarea id="text" name="text" formControlName="text" rows="5" cols="40" [class.is-invalid]="contactform.controls['text'].dirty && contactform.hasError('required','text')" placeholder="متن"></textarea>
+        </section>
+        <section class="frm_row_center">
+          <input (click)="send()" type="submit" class="submit" value="Submit">
+        </section>
+      </form>
+    </section>
+    <section class="info_sup">
+      <section class="row">
+        <img src="/assets/images/logo.png" alt="logo">
+      </section>
+      <section class="row">
+        <a href="tel:09140454200">09140454200</a>
+      </section>
+      <section class="row">
+        <a href="mailto:info@sajadam.me">info&#64;sajadam.me</a>
+        <a href="/">webinfogram.sajadam.me</a>
+      </section>
+      <section class="row">
+        <a href="https://t.me/farzamte">&#64;Webinfogram</a>
+      </section>
+    </section>
+  </section>
+  <app-footer1></app-footer1>
+</section>
